@@ -1,24 +1,45 @@
 <!doctype html>
-<html lang="en">
+<html lang="pl">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- TODO: Set the document title to the name of your application -->
-    <title>Lovable App</title>
-    <meta name="description" content="Lovable Generated Project" />
-    <meta name="author" content="Lovable" />
+    <title>Autoline — Pomoc drogowa, wynajem autolawet, skup aut | Lubuskie</title>
+    <meta name="description" content="Pomoc drogowa 8–22, wynajem autolawet i skup aut na terenie całego województwa lubuskiego. Tel: 726 259 806. Szybki dojazd, uczciwa wycena." />
+    <meta name="keywords" content="pomoc drogowa lubuskie, autolaweta Zielona Góra, skup aut Gorzów, wynajem lawety lubuskie, pomoc drogowa Zielona Góra" />
+    <meta name="author" content="Autoline" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 
-    <!-- TODO: Update og:title to match your application name -->
-    <meta property="og:title" content="Lovable App" />
-    <meta property="og:description" content="Lovable Generated Project" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Bebas+Neue&display=swap" rel="stylesheet" />
+
+    <meta property="og:title" content="Autoline — Pomoc drogowa, wynajem autolawet, skup aut | Lubuskie" />
+    <meta property="og:description" content="Pomoc drogowa 8–22, wynajem autolawet i skup aut na terenie całego województwa lubuskiego. Tel: 726 259 806." />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+    <meta property="og:locale" content="pl_PL" />
 
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@Lovable" />
-    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
-  </head>
 
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "AutomotiveBusiness",
+      "name": "Autoline",
+      "description": "Pomoc drogowa, wynajem autolawet i skup aut na terenie województwa lubuskiego.",
+      "telephone": "+48726259806",
+      "areaServed": {
+        "@type": "AdministrativeArea",
+        "name": "Województwo lubuskie"
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+        "opens": "08:00",
+        "closes": "22:00"
+      }
+    }
+    </script>
+  </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
