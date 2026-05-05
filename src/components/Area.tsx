@@ -45,42 +45,17 @@ export const Area = () => (
         </div>
 
         <div className="reveal relative">
-          <div className="aspect-square w-full max-w-md mx-auto bg-gradient-dark rounded-3xl p-8 shadow-elegant relative overflow-hidden">
-            <div className="absolute inset-0 opacity-10" style={{ backgroundImage: "radial-gradient(circle at 30% 30%, hsl(var(--accent)) 0%, transparent 50%)" }} />
-            <svg viewBox="0 0 400 400" className="w-full h-full relative" aria-label="Kontur województwa lubuskiego">
-              {/* Stylized lubuskie outline */}
-              <path
-                d="M120 50 L200 40 L260 70 L300 60 L340 110 L330 170 L350 220 L320 270 L340 320 L290 360 L220 350 L160 370 L110 340 L80 290 L60 220 L70 160 L90 100 Z"
-                fill="hsl(var(--accent) / 0.18)"
-                stroke="hsl(var(--accent))"
-                strokeWidth="2.5"
-                strokeLinejoin="round"
-              />
-              {/* City pins */}
-              {[
-                { x: 130, y: 280, label: "Zielona Góra" },
-                { x: 240, y: 130, label: "Gorzów Wlkp." },
-                { x: 200, y: 220, label: "Świebodzin" },
-                { x: 290, y: 260, label: "Sulechów" },
-                { x: 110, y: 330, label: "Żary" },
-              ].map((p) => (
-                <g key={p.label}>
-                  <circle cx={p.x} cy={p.y} r="6" fill="hsl(var(--accent))" />
-                  <circle cx={p.x} cy={p.y} r="11" fill="hsl(var(--accent) / 0.3)" />
-                  <text
-                    x={p.x + 14}
-                    y={p.y + 4}
-                    fill="white"
-                    fontSize="11"
-                    fontFamily="Inter"
-                    fontWeight="600"
-                  >
-                    {p.label}
-                  </text>
-                </g>
-              ))}
-            </svg>
-          </div>
+          <iframe
+            src="https://www.google.com/maps?q=wojew%C3%B3dztwo+lubuskie&output=embed&z=8"
+            width="100%"
+            height="450"
+            style={{ border: 0 }}
+            className="rounded-2xl w-full shadow-elegant"
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            title="Województwo lubuskie — obszar działania Autoline (pomoc drogowa, holowanie, autolaweta)"
+          />
         </div>
       </div>
     </div>

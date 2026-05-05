@@ -1,19 +1,7 @@
-import { useState } from "react";
 import { Phone, Mail, Clock, MapPin } from "lucide-react";
-import { CallButton, PHONE_DISPLAY, PHONE_HREF } from "./CallButton";
+import { PHONE_DISPLAY, PHONE_HREF } from "./CallButton";
 
 export const Contact = () => {
-  const [form, setForm] = useState({ name: "", phone: "", message: "" });
-
-  const submit = (e: React.FormEvent) => {
-    e.preventDefault();
-    const subject = encodeURIComponent(`Zapytanie ze strony — ${form.name}`);
-    const body = encodeURIComponent(
-      `Imię: ${form.name}\nTelefon: ${form.phone}\n\n${form.message}`
-    );
-    window.location.href = `mailto:kontakt@autoline.pl?subject=${subject}&body=${body}`;
-  };
-
   return (
     <section id="kontakt" className="py-20 sm:py-28 bg-surface-dark text-white">
       <div className="container mx-auto">
@@ -22,7 +10,7 @@ export const Contact = () => {
             Kontakt
           </span>
           <h2 className="font-display text-4xl sm:text-5xl mt-2">
-            Zadzwoń lub napisz
+            Zadzwoń — pomoc drogowa Lubuskie
           </h2>
         </div>
 
@@ -51,7 +39,7 @@ export const Contact = () => {
                 <MapPin className="h-5 w-5 text-accent mt-1" />
                 <div>
                   <div className="font-semibold text-white">Obszar działania</div>
-                  <div>Województwo lubuskie</div>
+                  <div>Województwo lubuskie — Zielona Góra, Gorzów Wielkopolski, Żary, Żagań, Nowa Sól, Świebodzin i okolice</div>
                 </div>
               </div>
               <div className="flex items-start gap-3">
@@ -76,59 +64,45 @@ export const Contact = () => {
             </div>
           </div>
 
-          <form
-            onSubmit={submit}
-            className="reveal bg-surface-dark-2 p-8 rounded-3xl border border-white/10 space-y-4"
-          >
-            <h3 className="font-display text-2xl mb-2">Wyślij wiadomość</h3>
-            <div>
-              <label className="block text-sm font-medium mb-2 text-white/80">
-                Imię
-              </label>
-              <input
-                required
-                value={form.name}
-                onChange={(e) => setForm({ ...form, name: e.target.value })}
-                className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/15 text-white placeholder:text-white/40 focus:outline-none focus:border-accent transition-smooth"
-                placeholder="Jan Kowalski"
-              />
+          <div className="reveal bg-surface-dark-2 p-8 sm:p-10 rounded-3xl border border-white/10 flex flex-col justify-center text-center">
+            <div className="text-sm font-semibold uppercase tracking-wider text-accent mb-4">
+              Najszybsza droga
             </div>
-            <div>
-              <label className="block text-sm font-medium mb-2 text-white/80">
-                Telefon
-              </label>
-              <input
-                required
-                type="tel"
-                value={form.phone}
-                onChange={(e) => setForm({ ...form, phone: e.target.value })}
-                className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/15 text-white placeholder:text-white/40 focus:outline-none focus:border-accent transition-smooth"
-                placeholder="600 000 000"
-              />
-            </div>
-            <div>
-              <label className="block text-sm font-medium mb-2 text-white/80">
-                Wiadomość
-              </label>
-              <textarea
-                required
-                rows={5}
-                value={form.message}
-                onChange={(e) => setForm({ ...form, message: e.target.value })}
-                className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/15 text-white placeholder:text-white/40 focus:outline-none focus:border-accent transition-smooth resize-none"
-                placeholder="Skąd–dokąd, co potrzebujesz..."
-              />
-            </div>
-            <button
-              type="submit"
-              className="w-full py-4 rounded-xl bg-gradient-accent text-accent-foreground font-semibold shadow-accent hover:brightness-110 transition-smooth"
+            <a
+              href={PHONE_HREF}
+              className="font-display text-5xl sm:text-6xl text-white hover:text-accent transition-smooth leading-tight"
+              aria-label={`Zadzwoń ${PHONE_DISPLAY}`}
             >
-              Wyślij zapytanie
-            </button>
-            <p className="text-xs text-white/50 text-center">
-              Lub po prostu zadzwoń — odpowiemy od razu.
+              📞 {PHONE_DISPLAY}
+            </a>
+            <p className="mt-6 text-white/80 text-lg">
+              Najszybszy sposób na pomoc — zadzwoń. Odbieramy codziennie 8:00–22:00.
             </p>
-          </form>
+
+            <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-3 text-left">
+              <a
+                href={PHONE_HREF}
+                className="p-4 rounded-2xl bg-white/5 border border-white/10 hover:border-accent transition-smooth"
+              >
+                <Phone className="h-5 w-5 text-accent mb-2" />
+                <div className="text-xs text-white/60 uppercase tracking-wider">Telefon</div>
+                <div className="font-semibold text-white text-sm">{PHONE_DISPLAY}</div>
+              </a>
+              <a
+                href="mailto:kontakt@autoline.pl"
+                className="p-4 rounded-2xl bg-white/5 border border-white/10 hover:border-accent transition-smooth"
+              >
+                <Mail className="h-5 w-5 text-accent mb-2" />
+                <div className="text-xs text-white/60 uppercase tracking-wider">E-mail</div>
+                <div className="font-semibold text-white text-sm break-all">kontakt@autoline.pl</div>
+              </a>
+              <div className="p-4 rounded-2xl bg-white/5 border border-white/10">
+                <MapPin className="h-5 w-5 text-accent mb-2" />
+                <div className="text-xs text-white/60 uppercase tracking-wider">Obszar</div>
+                <div className="font-semibold text-white text-sm">Województwo lubuskie</div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
