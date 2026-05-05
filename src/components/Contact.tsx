@@ -53,15 +53,6 @@ export const Contact = () => {
               </div>
             </div>
 
-            <div className="rounded-2xl overflow-hidden border border-white/10 aspect-video">
-              <iframe
-                title="Mapa — województwo lubuskie"
-                src="https://www.google.com/maps?q=Zielona+G%C3%B3ra,+Lubuskie&output=embed"
-                className="w-full h-full"
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-              />
-            </div>
           </div>
         </div>
       </div>
