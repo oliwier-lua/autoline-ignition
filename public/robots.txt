@@ -1,3 +1,0 @@
-User-agent: *
-Allow: /
-Sitemap: https://autoline.pl/sitemap.xml
